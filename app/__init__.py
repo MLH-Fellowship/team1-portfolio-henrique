@@ -145,7 +145,7 @@ def hobbies():
 def timeline():
     posts = [
         model_to_dict(p)
-        for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        for p in TimelinePost.select().order_by(TimelinePost.created_at.desc(), TimelinePost.id.desc())
     ]
     return render_template(
         'timeline.html',
@@ -161,7 +161,7 @@ def get_time_line_post():
         'timeline_posts': [
             model_to_dict(p)
             for p in
-            TimelinePost.select().order_by(TimelinePost.created_at.desc())
+            TimelinePost.select().order_by(TimelinePost.created_at.desc(), TimelinePost.id.desc())
         ]
     }
 
