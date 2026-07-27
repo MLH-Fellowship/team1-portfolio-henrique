@@ -77,6 +77,28 @@
         </section>
         {% endif %}
 
+        {% if profile.coursework %}
+        <section class="content-section" id="coursework">
+            <h2>Relevant Coursework</h2>
+            <p class="section-intro">Key courses I've completed across Computer Science, Mathematics, and Theory.</p>
+            <div class="coursework-grid">
+                {% for group in profile.coursework %}
+                <div class="coursework-category">
+                    <div class="category-header">
+                        <span class="category-icon">{{ group.icon }}</span>
+                        <h3>{{ group.category }}</h3>
+                    </div>
+                    <div class="course-pills">
+                        {% for course in group.courses %}
+                        <span class="course-pill">{{ course }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
         {% if profile.hobbies %}
         <section class="content-section" id="hobbies">
             <h2>Hobbies</h2>
@@ -111,21 +133,23 @@
     {% if profile.places %}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const places = {{ profile.places | tojson }};
-        const map = L.map("travel-map", {
-            scrollWheelZoom: false
-        }).setView([20, 10], 2);
+        {
+            const places = {{ profile.places | tojson }};
+            const map = L.map("travel-map", {
+                scrollWheelZoom: false
+            }).setView([20, 10], 2);
 
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 18,
-            attribution: "&copy; OpenStreetMap contributors"
-        }).addTo(map);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 18,
+                attribution: "&copy; OpenStreetMap contributors"
+            }).addTo(map);
 
-        places.forEach((place) => {
-            L.marker([place.lat, place.lng])
-                .addTo(map)
-                .bindPopup(place.name);
-        });
+            places.forEach((place) => {
+                L.marker([place.lat, place.lng])
+                    .addTo(map)
+                    .bindPopup(place.name);
+            });
+        }
     </script>
     {% endif %}
 </body>

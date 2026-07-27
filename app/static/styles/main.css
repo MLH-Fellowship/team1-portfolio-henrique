@@ -259,6 +259,100 @@ a {
     padding: 10px 14px;
 }
 
+/* Coursework */
+.coursework-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 8px;
+}
+
+.coursework-category {
+    background: white;
+    border-left: 4px solid #1C539F;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+    padding: 28px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.coursework-category:hover {
+    box-shadow: 0 14px 36px rgba(28, 83, 159, 0.15);
+    transform: translateY(-4px);
+}
+
+.coursework-category:nth-child(2) {
+    border-left-color: #6366f1;
+}
+
+.coursework-category:nth-child(3) {
+    border-left-color: #10b981;
+}
+
+.category-header {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.category-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.category-header h3 {
+    color: #1e293b;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-pill {
+    background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+    border-radius: 999px;
+    color: #1e40af;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: all 0.2s ease;
+}
+
+.course-pill:hover {
+    background: linear-gradient(135deg, #1C539F, #6366f1);
+    box-shadow: 0 4px 14px rgba(28, 83, 159, 0.25);
+    color: white;
+    transform: scale(1.05);
+}
+
+.coursework-category:nth-child(2) .course-pill {
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    color: #4338ca;
+}
+
+.coursework-category:nth-child(2) .course-pill:hover {
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
+}
+
+.coursework-category:nth-child(3) .course-pill {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    color: #065f46;
+}
+
+.coursework-category:nth-child(3) .course-pill:hover {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
 /* Mobile */
 @media (max-width: 800px) {
     .nav-content {

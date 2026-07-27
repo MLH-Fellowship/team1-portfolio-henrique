@@ -97,6 +97,42 @@ HENRIQUE_PROFILE = {
             "description": "I love exploring new places and experiencing different cultures. Every trip brings a fresh perspective and great memories.",
         },
     ],
+    "coursework": [
+        {
+            "category": "Computer Science",
+            "icon": "💻",
+            "courses": [
+                "Data Structures & Algorithms",
+                "Computer Networks",
+                "Intro to Machine Learning",
+                "Databases I",
+                "Operating Systems",
+                "Computer Organization",
+                "Computer Architecture",
+                "Compilers",
+                "Analysis of Algorithms I",
+                "Object Oriented Design",
+                "Intro to Software Engineering",
+            ],
+        },
+        {
+            "category": "Mathematics",
+            "icon": "📐",
+            "courses": [
+                "Calculus I",
+                "Calculus II",
+                "Linear Algebra I",
+                "Linear Algebra II",
+            ],
+        },
+        {
+            "category": "Theory",
+            "icon": "🧠",
+            "courses": [
+                "Theory of Computing",
+            ],
+        },
+    ],
     "places": [
         {"name": "Brasília (Hometown)", "lat": -15.7939, "lng": -47.8828},
         {"name": "São Paulo", "lat": -23.5505, "lng": -46.6333},
